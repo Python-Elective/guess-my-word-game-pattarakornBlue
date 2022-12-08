@@ -49,8 +49,11 @@ def is_word_guessed(secret_word, letters_guessed):
     returns: boolean, True if all the letters of secret_word are in letters_guessed;
       False otherwise
     '''
-    # FILL IN YOUR CODE HERE...
-    pass
+    for letter in letters_guessed:
+        if letter not in secret_word:
+          return False
+    return True
+        
 
 
 ### Testcases
