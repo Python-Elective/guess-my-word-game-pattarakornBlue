@@ -109,13 +109,13 @@ def get_available_letters(letters_guessed):
     for every letter that is guessed
       remove the letter from the availible letters
     '''
-    letter_availible = "abcdefghijklmnopqrstuvwxyz"
-    letter_list = list(letter_availible) 
+    import string
+    letter_list = list(string.ascii_lowercase)
 
     for letter in letters_guessed:
       if letter in letter_list:
         letter_list.remove(letter)
-    return letter_availible
+    return letter_list
       
 
 
