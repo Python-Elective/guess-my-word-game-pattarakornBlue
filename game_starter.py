@@ -108,14 +108,17 @@ def get_available_letters(letters_guessed):
     '''
     for every letter that is guessed
       remove the letter from the availible letters
+    return letters availible
     '''
     import string
     letter_list = list(string.ascii_lowercase)
+    letter_remain = ""
 
     for letter in letters_guessed:
-      if letter in letter_list:
-        letter_list.remove(letter)
-    return letter_list
+      letter_list.remove(letter)
+    for element in letter_list:
+      letter_remain += element
+    return letter_remain
       
 
 
