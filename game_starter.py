@@ -105,13 +105,23 @@ def get_available_letters(letters_guessed):
     returns: string, comprised of letters that represents what letters have not
       yet been guessed.
     '''
-    # FILL IN YOUR CODE HERE...   
-    pass
+    '''
+    for every letter that is guessed
+      remove the letter from the availible letters
+    '''
+    letter_availible = "abcdefghijklmnopqrstuvwxyz"
+    letter_list = list(letter_availible) 
+
+    for letter in letters_guessed:
+      if letter in letter_list:
+        letter_list.remove(letter)
+    return letter_availible
+      
 
 
 
 #Testcases 
-# print( get_available_letters(['e', 'i', 'k', 'p', 'r', 's']) )
+print( get_available_letters(['e', 'i', 'k', 'p', 'r', 's']) )
   
 def game_loop(secret_word):
     '''
