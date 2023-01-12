@@ -55,8 +55,8 @@ def is_word_guessed(secret_word, letters_guessed):
       return False
     otherwise return true
     '''
-    for letter in letters_guessed:
-        if letter not in secret_word:
+    for letter in secret_word:
+        if letter not in letters_guessed:
           return False
     return True
         
@@ -88,7 +88,7 @@ def get_guessed_word(secret_word, letters_guessed):
       if letter in letters_guessed:
         word += letter
       else:
-        word += '_'
+        word += ' _ '
     return word
     
     
@@ -113,12 +113,14 @@ def get_available_letters(letters_guessed):
     import string
     letter_list = list(string.ascii_lowercase)
     letter_remain = ""
+    
 
     for letter in letters_guessed:
       letter_list.remove(letter)
     for element in letter_list:
       letter_remain += element
     return letter_remain
+
       
 
 
