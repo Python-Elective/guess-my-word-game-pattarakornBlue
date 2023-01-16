@@ -126,7 +126,7 @@ def get_available_letters(letters_guessed):
 
 
 #Testcases 
-print( get_available_letters(['e', 'i', 'k', 'p', 'r', 's']) )
+# print( get_available_letters(['e', 'i', 'k', 'p', 'r', 's']) )
   
 def game_loop(secret_word):
     '''
@@ -149,7 +149,33 @@ def game_loop(secret_word):
     Follows the other limitations detailed in the problem write-up.
     '''
     # FILL IN YOUR CODE HERE...
+    print ("The secret word has ", len(secret_word), ' letters')
+    print("Good luck!")
+    lives_remain = 8
+    letters_guessed = []
+    while lives_remain > 0:
+      print("You have", lives_remain, "lives")
+      print("letters remaining : ", get_available_letters(letters_guessed))
+      current_guess = input("Guess a letter: " ).lower()
+      if current_guess in letters_guessed:
+        print("You already guessed this letter!:", get_guessed_word(secret_word, letters_guessed))
+      else:
+        letters_guessed.append(current_guess)
+        if current_guess in secret_word:
+          print("correct :",get_guessed_word(secret_word, letters_guessed))
+        else:
+          lives_remain -= 1
+          print("incorrect : ",get_guessed_word(secret_word, letters_guessed))
+      print("")
+      if is_word_guessed(secret_word, letters_guessed) == True:
+        return("You win!, the secret word is : ", secret_word)
+    if is_word_guessed(secret_word, letters_guessed) == False:
+        return("You lost!, the secret word is : ", secret_word)
     pass
+
+game_loop('honda')      
+      
+
 
 
 
