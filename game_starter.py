@@ -168,15 +168,10 @@ def game_loop(secret_word):
           print("incorrect : ",get_guessed_word(secret_word, letters_guessed))
       print("")
       if is_word_guessed(secret_word, letters_guessed) == True:
-        return("You win!, the secret word is : ", secret_word)
+        return print("You win!, the secret word is :", secret_word)
     if is_word_guessed(secret_word, letters_guessed) == False:
-        return("You lost!, the secret word is : ", secret_word)
-    pass
-
-game_loop('honda')      
+        return print("Game over!, the secret word is :", secret_word)
       
-
-
 
 
 
